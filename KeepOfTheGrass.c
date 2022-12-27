@@ -8,6 +8,7 @@
  * the standard input according to the problem statement.
  **/
 
+// 1 = me, 0 = foe, -1 = neutral
  typedef struct s_map
  {
     int scrap_amount;
@@ -37,14 +38,6 @@ int main()
         scanf("%d%d", &my_matter, &opp_matter);
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                /*int scrap_amount;
-                // 1 = me, 0 = foe, -1 = neutral
-                int owner;
-                int units;
-                int recycler;
-                int can_build;
-                int can_spawn;
-                int in_range_of_recycler;*/
                 scanf("%d%d%d%d%d%d%d", &map[i][j].scrap_amount, &map[i][j].owner, &map[i][j].units, &map[i][j].recycler,
                     &map[i][j].can_build, &map[i][j].can_spawn, &map[i][j].in_range_of_recycler);
             }
@@ -79,8 +72,8 @@ int main()
                     if (my_matter >= 30)
                         printf("SPAWN %d %d %d;", 1, x, y);
                 }
-                if (map[y][x].owner == 1 && !map[y][x].in_range_of_recycler && my_matter >= 10)
-                    printf("BUILD %d %d;", x, y);
+                /*if (map[y][x].owner == 1 && !map[y][x].in_range_of_recycler && my_matter >= 10)
+                    printf("BUILD %d %d;", x, y);*/
                 x++;
             }
             if (my_matter >= 30)
